@@ -55,3 +55,5 @@ C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\
 C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak_Content.g.cs
 C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\Signup.g.cs
 C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\Signup.baml
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\FontAwesome.WPF.dll
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\FontAwesome.WPF.xml
