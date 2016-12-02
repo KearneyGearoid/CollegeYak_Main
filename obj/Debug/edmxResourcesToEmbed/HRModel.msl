@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="ALERTs">
+      <EntityTypeMapping TypeName="Model.ALERT">
+        <MappingFragment StoreEntitySet="ALERT">
+          <ScalarProperty Name="ALERT_ID" ColumnName="ALERT_ID" />
+          <ScalarProperty Name="ALERT_TYPE" ColumnName="ALERT_TYPE" />
+          <ScalarProperty Name="ALERTED_USERNAME" ColumnName="ALERTED_USERNAME" />
+          <ScalarProperty Name="ALERT_DATE" ColumnName="ALERT_DATE" />
+          <ScalarProperty Name="POST_ID" ColumnName="POST_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COLLEGEs">
+      <EntityTypeMapping TypeName="Model.COLLEGE">
+        <MappingFragment StoreEntitySet="COLLEGE">
+          <ScalarProperty Name="COLLEGE_NAME" ColumnName="COLLEGE_NAME" />
+          <ScalarProperty Name="ABBREVIATION" ColumnName="ABBREVIATION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FOLLOWINGs">
+      <EntityTypeMapping TypeName="Model.FOLLOWING">
+        <MappingFragment StoreEntitySet="FOLLOWING">
+          <ScalarProperty Name="FOLLOWING_ID" ColumnName="FOLLOWING_ID" />
+          <ScalarProperty Name="FOLLOWING_UN" ColumnName="FOLLOWING_UN" />
+          <ScalarProperty Name="FOLLOWER_UN" ColumnName="FOLLOWER_UN" />
+          <ScalarProperty Name="DATE_STARTED" ColumnName="DATE_STARTED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEMBERs">
+      <EntityTypeMapping TypeName="Model.MEMBER">
+        <MappingFragment StoreEntitySet="MEMBER">
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="COLLEGE_NAME" ColumnName="COLLEGE_NAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="AGE" ColumnName="AGE" />
+          <ScalarProperty Name="CONFIRM_EMAIL" ColumnName="CONFIRM_EMAIL" />
+          <ScalarProperty Name="ACTIVE_ACCOUNT" ColumnName="ACTIVE_ACCOUNT" />
+          <ScalarProperty Name="LOGGED_IN" ColumnName="LOGGED_IN" />
+          <ScalarProperty Name="PICTURE" ColumnName="PICTURE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POSTs">
+      <EntityTypeMapping TypeName="Model.POST">
+        <MappingFragment StoreEntitySet="POST">
+          <ScalarProperty Name="POST_ID" ColumnName="POST_ID" />
+          <ScalarProperty Name="COLLEGE_NAME" ColumnName="COLLEGE_NAME" />
+          <ScalarProperty Name="USERNAME_OP" ColumnName="USERNAME_OP" />
+          <ScalarProperty Name="DETAILS" ColumnName="DETAILS" />
+          <ScalarProperty Name="POST_TIME" ColumnName="POST_TIME" />
+          <ScalarProperty Name="VISIBILITY" ColumnName="VISIBILITY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REPORTs">
+      <EntityTypeMapping TypeName="Model.REPORT">
+        <MappingFragment StoreEntitySet="REPORT">
+          <ScalarProperty Name="REPORT_ID" ColumnName="REPORT_ID" />
+          <ScalarProperty Name="USERNAME_REPORTER" ColumnName="USERNAME_REPORTER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOTEs">
+      <EntityTypeMapping TypeName="Model.VOTE">
+        <MappingFragment StoreEntitySet="VOTE">
+          <ScalarProperty Name="VOTE_ID" ColumnName="VOTE_ID" />
+          <ScalarProperty Name="POST_ID" ColumnName="POST_ID" />
+          <ScalarProperty Name="USERNAME_VOTER" ColumnName="USERNAME_VOTER" />
+          <ScalarProperty Name="USERNAME_POSTER" ColumnName="USERNAME_POSTER" />
+          <ScalarProperty Name="VOTE_TYPE" ColumnName="VOTE_TYPE" />
+          <ScalarProperty Name="VOTE_DATE" ColumnName="VOTE_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POST_VIEW">
+      <EntityTypeMapping TypeName="Model.POST_VIEW">
+        <MappingFragment StoreEntitySet="POST_VIEW">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="DETAILS" ColumnName="DETAILS" />
+          <ScalarProperty Name="POST_TIME" ColumnName="POST_TIME" />
+          <ScalarProperty Name="POST_ID" ColumnName="POST_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOTEDOWN_VIEW">
+      <EntityTypeMapping TypeName="Model.VOTEDOWN_VIEW">
+        <MappingFragment StoreEntitySet="VOTEDOWN_VIEW">
+          <ScalarProperty Name="USERNAME_VOTER" ColumnName="USERNAME_VOTER" />
+          <ScalarProperty Name="POST_ID" ColumnName="POST_ID" />
+          <ScalarProperty Name="DETAILS" ColumnName="DETAILS" />
+          <ScalarProperty Name="Total_Down_Votes" ColumnName="Total_Down_Votes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOTEUP_VIEW">
+      <EntityTypeMapping TypeName="Model.VOTEUP_VIEW">
+        <MappingFragment StoreEntitySet="VOTEUP_VIEW">
+          <ScalarProperty Name="USERNAME_VOTER" ColumnName="USERNAME_VOTER" />
+          <ScalarProperty Name="POST_ID" ColumnName="POST_ID" />
+          <ScalarProperty Name="DETAILS" ColumnName="DETAILS" />
+          <ScalarProperty Name="Total_Up_Votes" ColumnName="Total_Up_Votes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ACTIVITY" TypeName="Model.ACTIVITY" StoreEntitySet="ACTIVITY">
+      <EndProperty Name="ALERT">
+        <ScalarProperty Name="ALERT_ID" ColumnName="ACTIVITY_ID" />
+      </EndProperty>
+      <EndProperty Name="MEMBER">
+        <ScalarProperty Name="USERNAME" ColumnName="USERNAME_ACT" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="CHECKVOTE" FunctionName="Model.Store.CHECKVOTE" />
+    <FunctionImportMapping FunctionImportName="CHECKVOTEGEAROID" FunctionName="Model.Store.CHECKVOTEGEAROID" />
+    <FunctionImportMapping FunctionImportName="CREATEPOST" FunctionName="Model.Store.CREATEPOST" />
+    <FunctionImportMapping FunctionImportName="LIST_VOTERS_FOR_POST" FunctionName="Model.Store.LIST_VOTERS_FOR_POST" />
+    <FunctionImportMapping FunctionImportName="LOGGINGIN" FunctionName="Model.Store.LOGGINGIN" />
+    <FunctionImportMapping FunctionImportName="SIGNIN" FunctionName="Model.Store.SIGNIN" />
+  </EntityContainerMapping>
+</Mapping>

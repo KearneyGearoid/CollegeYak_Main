@@ -1,0 +1,57 @@
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\bin\Debug\CollegeYak.exe.config
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\CollegeYak.csprojResolveAssemblyReference.cache
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\MainWindow.g.cs
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\App.g.cs
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\CollegeYak_MarkupCompile.cache
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\CollegeYak_MarkupCompile.lref
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\bin\Debug\CollegeYak.exe
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\bin\Debug\CollegeYak.pdb
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\MainWindow.baml
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\CollegeYak.g.resources
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\CollegeYak.Properties.Resources.resources
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\CollegeYak.csproj.GenerateResource.Cache
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\CollegeYak.exe
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\CollegeYak.pdb
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\Dashboard.g.cs
+c:\users\gearoid\documents\visual studio 2015\Projects\CollegeYak\CollegeYak\obj\Debug\Dashboard.baml
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\CollegeYak.exe.config
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.exe
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.pdb
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\CollegeYak.exe
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\CollegeYak.pdb
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.csprojResolveAssemblyReference.cache
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\Dashboard.g.cs
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\MainWindow.g.cs
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\App.g.cs
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak_MarkupCompile.cache
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak_MarkupCompile.lref
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\Dashboard.baml
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\MainWindow.baml
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.g.resources
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.Properties.Resources.resources
+C:\Users\Gearoid\Downloads\CollegeYak_IntrotoDatabaseProg-master\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.csproj.GenerateResource.Cache
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\CollegeYak.exe.config
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.exe
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.pdb
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\CollegeYak.exe
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\CollegeYak.pdb
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\EntityFramework.dll
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\Oracle.ManagedDataAccess.dll
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\EntityFramework.xml
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.csprojResolveAssemblyReference.cache
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\Dashboard.g.cs
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\MainWindow.g.cs
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\App.g.cs
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak_MarkupCompile.cache
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak_MarkupCompile.lref
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\Dashboard.baml
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\MainWindow.baml
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.g.resources
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.Properties.Resources.resources
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak.csproj.GenerateResource.Cache
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\CollegeYak_Content.g.cs
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\Signup.g.cs
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\Signup.baml

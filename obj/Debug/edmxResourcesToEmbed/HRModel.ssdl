@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACTIVITY">
+    <Key>
+      <PropertyRef Name="ACTIVITY_ID" />
+    </Key>
+    <Property Name="ACTIVITY_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="USERNAME_ACT" Type="varchar2" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ALERT">
+    <Key>
+      <PropertyRef Name="ALERT_ID" />
+    </Key>
+    <Property Name="ALERT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="ALERT_TYPE" Type="char" MaxLength="2" />
+    <Property Name="ALERTED_USERNAME" Type="varchar2" MaxLength="20" />
+    <Property Name="ALERT_DATE" Type="date" />
+    <Property Name="POST_ID" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <EntityType Name="COLLEGE">
+    <Key>
+      <PropertyRef Name="COLLEGE_NAME" />
+    </Key>
+    <Property Name="COLLEGE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="ABBREVIATION" Type="varchar2" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="FOLLOWING">
+    <Key>
+      <PropertyRef Name="FOLLOWING_ID" />
+    </Key>
+    <Property Name="FOLLOWING_ID" Type="varchar2" MaxLength="10" Nullable="false" />
+    <Property Name="FOLLOWING_UN" Type="varchar2" MaxLength="20" />
+    <Property Name="FOLLOWER_UN" Type="varchar2" MaxLength="20" />
+    <Property Name="DATE_STARTED" Type="date" />
+  </EntityType>
+  <EntityType Name="MEMBER">
+    <Key>
+      <PropertyRef Name="USERNAME" />
+    </Key>
+    <Property Name="USERNAME" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="COLLEGE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="AGE" Type="number" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="CONFIRM_EMAIL" Type="varchar2" MaxLength="1" />
+    <Property Name="ACTIVE_ACCOUNT" Type="varchar2" MaxLength="1" />
+    <Property Name="LOGGED_IN" Type="varchar2" MaxLength="1" />
+    <Property Name="PICTURE" Type="blob" />
+  </EntityType>
+  <EntityType Name="POST">
+    <Key>
+      <PropertyRef Name="POST_ID" />
+    </Key>
+    <Property Name="POST_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="COLLEGE_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+    <Property Name="USERNAME_OP" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="DETAILS" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="POST_TIME" Type="date" />
+    <Property Name="VISIBILITY" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="REPORT">
+    <Key>
+      <PropertyRef Name="REPORT_ID" />
+    </Key>
+    <Property Name="REPORT_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="USERNAME_REPORTER" Type="varchar2" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="VOTE">
+    <Key>
+      <PropertyRef Name="VOTE_ID" />
+    </Key>
+    <Property Name="VOTE_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="POST_ID" Type="number" Precision="38" Scale="0" />
+    <Property Name="USERNAME_VOTER" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="USERNAME_POSTER" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="VOTE_TYPE" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="VOTE_DATE" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ADMIN.POST_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="POST_VIEW">
+    <Key>
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="DETAILS" />
+      <PropertyRef Name="POST_ID" />
+    </Key>
+    <Property Name="Username" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="DETAILS" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="POST_TIME" Type="date" />
+    <Property Name="POST_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ADMIN.VOTEDOWN_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VOTEDOWN_VIEW">
+    <Key>
+      <PropertyRef Name="USERNAME_VOTER" />
+      <PropertyRef Name="POST_ID" />
+      <PropertyRef Name="DETAILS" />
+    </Key>
+    <Property Name="USERNAME_VOTER" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="POST_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DETAILS" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="Total_Down_Votes" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ADMIN.VOTEUP_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VOTEUP_VIEW">
+    <Key>
+      <PropertyRef Name="USERNAME_VOTER" />
+      <PropertyRef Name="POST_ID" />
+      <PropertyRef Name="DETAILS" />
+    </Key>
+    <Property Name="USERNAME_VOTER" Type="varchar2" MaxLength="20" Nullable="false" />
+    <Property Name="POST_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="DETAILS" Type="varchar2" MaxLength="150" Nullable="false" />
+    <Property Name="Total_Up_Votes" Type="number" Precision="38" Scale="0" />
+  </EntityType>
+  <Association Name="FK_ALER_ACTIVITY_ID">
+    <End Role="ALERT" Type="Self.ALERT" Multiplicity="1" />
+    <End Role="ACTIVITY" Type="Self.ACTIVITY" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ALERT">
+        <PropertyRef Name="ALERT_ID" />
+      </Principal>
+      <Dependent Role="ACTIVITY">
+        <PropertyRef Name="ACTIVITY_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ALERT_ID">
+    <End Role="ALERT" Type="Self.ALERT" Multiplicity="1" />
+    <End Role="VOTE" Type="Self.VOTE" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ALERT">
+        <PropertyRef Name="ALERT_ID" />
+      </Principal>
+      <Dependent Role="VOTE">
+        <PropertyRef Name="VOTE_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ALERT_REPORT_ID">
+    <End Role="ALERT" Type="Self.ALERT" Multiplicity="1" />
+    <End Role="REPORT" Type="Self.REPORT" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ALERT">
+        <PropertyRef Name="ALERT_ID" />
+      </Principal>
+      <Dependent Role="REPORT">
+        <PropertyRef Name="REPORT_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ALERTED_USERNAME">
+    <End Role="MEMBER" Type="Self.MEMBER" Multiplicity="0..1" />
+    <End Role="ALERT" Type="Self.ALERT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="ALERT">
+        <PropertyRef Name="ALERTED_USERNAME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_COLLEGE_NAME">
+    <End Role="COLLEGE" Type="Self.COLLEGE" Multiplicity="1" />
+    <End Role="POST" Type="Self.POST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COLLEGE">
+        <PropertyRef Name="COLLEGE_NAME" />
+      </Principal>
+      <Dependent Role="POST">
+        <PropertyRef Name="COLLEGE_NAME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FOLLOWER_UN">
+    <End Role="MEMBER" Type="Self.MEMBER" Multiplicity="0..1" />
+    <End Role="FOLLOWING" Type="Self.FOLLOWING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="FOLLOWING">
+        <PropertyRef Name="FOLLOWER_UN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FOLLOWING_UN">
+    <End Role="MEMBER" Type="Self.MEMBER" Multiplicity="0..1" />
+    <End Role="FOLLOWING" Type="Self.FOLLOWING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="FOLLOWING">
+        <PropertyRef Name="FOLLOWING_UN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_COLLEGE">
+    <End Role="COLLEGE" Type="Self.COLLEGE" Multiplicity="1" />
+    <End Role="MEMBER" Type="Self.MEMBER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COLLEGE">
+        <PropertyRef Name="COLLEGE_NAME" />
+      </Principal>
+      <Dependent Role="MEMBER">
+        <PropertyRef Name="COLLEGE_NAME" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_POST_ID">
+    <End Role="POST" Type="Self.POST" Multiplicity="0..1" />
+    <End Role="ALERT" Type="Self.ALERT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="POST">
+        <PropertyRef Name="POST_ID" />
+      </Principal>
+      <Dependent Role="ALERT">
+        <PropertyRef Name="POST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USERNAME_ACTIVITY">
+    <End Role="MEMBER" Type="Self.MEMBER" Multiplicity="1" />
+    <End Role="ACTIVITY" Type="Self.ACTIVITY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="ACTIVITY">
+        <PropertyRef Name="USERNAME_ACT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USERNAME_OP">
+    <End Role="MEMBER" Type="Self.MEMBER" Multiplicity="1" />
+    <End Role="POST" Type="Self.POST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="POST">
+        <PropertyRef Name="USERNAME_OP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USERNAME_POSTER">
+    <End Role="MEMBER" Type="Self.MEMBER" Multiplicity="1" />
+    <End Role="VOTE" Type="Self.VOTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="VOTE">
+        <PropertyRef Name="USERNAME_POSTER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USERNAME_REPORT">
+    <End Role="MEMBER" Type="Self.MEMBER" Multiplicity="0..1" />
+    <End Role="REPORT" Type="Self.REPORT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="REPORT">
+        <PropertyRef Name="USERNAME_REPORTER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USERNAME_VOTER">
+    <End Role="MEMBER" Type="Self.MEMBER" Multiplicity="1" />
+    <End Role="VOTE" Type="Self.VOTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="USERNAME" />
+      </Principal>
+      <Dependent Role="VOTE">
+        <PropertyRef Name="USERNAME_VOTER" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VOTED_POST_ID">
+    <End Role="POST" Type="Self.POST" Multiplicity="0..1" />
+    <End Role="VOTE" Type="Self.VOTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="POST">
+        <PropertyRef Name="POST_ID" />
+      </Principal>
+      <Dependent Role="VOTE">
+        <PropertyRef Name="POST_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CHECKVOTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+    <Parameter Name="VOTETYPE" Type="varchar2" Mode="In" />
+    <Parameter Name="VOTER_USERNAME" Type="varchar2" Mode="In" />
+    <Parameter Name="VOTED_USERNAME" Type="varchar2" Mode="In" />
+    <Parameter Name="POSTID" Type="number" Mode="In" />
+  </Function>
+  <Function Name="CHECKVOTEGEAROID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+    <Parameter Name="VOTETYPE" Type="varchar2" Mode="In" />
+    <Parameter Name="VOTER_USERNAME" Type="varchar2" Mode="In" />
+    <Parameter Name="VOTED_USERNAME" Type="varchar2" Mode="In" />
+    <Parameter Name="POSTID" Type="number" Mode="In" />
+  </Function>
+  <Function Name="CREATEPOST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+    <Parameter Name="DETAILS" Type="varchar2" Mode="In" />
+    <Parameter Name="ID" Type="number" Mode="In" />
+  </Function>
+  <Function Name="IS_UNAME_PSW_MATCH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN" ReturnType="pl/sql boolean">
+    <Parameter Name="UNAME" Type="varchar2" Mode="In" />
+    <Parameter Name="PSW" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="LIST_VOTERS_FOR_POST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+    <Parameter Name="V_POST_ID" Type="number" Mode="In" />
+  </Function>
+  <Function Name="LOGGINGIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+    <Parameter Name="UNAME" Type="varchar2" Mode="In" />
+    <Parameter Name="PSW" Type="varchar2" Mode="In" />
+  </Function>
+  <Function Name="SIGNIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+    <Parameter Name="NAME" Type="varchar2" Mode="In" />
+    <Parameter Name="EMAIL" Type="varchar2" Mode="In" />
+    <Parameter Name="COLLEGE" Type="varchar2" Mode="In" />
+    <Parameter Name="PASSWORD" Type="varchar2" Mode="In" />
+    <Parameter Name="AGE" Type="number" Mode="In" />
+  </Function>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="ACTIVITY" EntityType="Self.ACTIVITY" Schema="ADMIN" store:Type="Tables" />
+    <EntitySet Name="ALERT" EntityType="Self.ALERT" Schema="ADMIN" store:Type="Tables" />
+    <EntitySet Name="COLLEGE" EntityType="Self.COLLEGE" Schema="ADMIN" store:Type="Tables" />
+    <EntitySet Name="FOLLOWING" EntityType="Self.FOLLOWING" Schema="ADMIN" store:Type="Tables" />
+    <EntitySet Name="MEMBER" EntityType="Self.MEMBER" Schema="ADMIN" store:Type="Tables" />
+    <EntitySet Name="POST" EntityType="Self.POST" Schema="ADMIN" store:Type="Tables" />
+    <EntitySet Name="REPORT" EntityType="Self.REPORT" Schema="ADMIN" store:Type="Tables" />
+    <EntitySet Name="VOTE" EntityType="Self.VOTE" Schema="ADMIN" store:Type="Tables" />
+    <EntitySet Name="POST_VIEW" EntityType="Self.POST_VIEW" store:Type="Views" store:Schema="ADMIN">
+      <DefiningQuery>SELECT 
+"POST_VIEW"."Username" AS "Username", 
+"POST_VIEW"."DETAILS" AS "DETAILS", 
+"POST_VIEW"."POST_TIME" AS "POST_TIME", 
+"POST_VIEW"."POST_ID" AS "POST_ID"
+FROM "ADMIN"."POST_VIEW" "POST_VIEW"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VOTEDOWN_VIEW" EntityType="Self.VOTEDOWN_VIEW" store:Type="Views" store:Schema="ADMIN">
+      <DefiningQuery>SELECT 
+"VOTEDOWN_VIEW"."USERNAME_VOTER" AS "USERNAME_VOTER", 
+"VOTEDOWN_VIEW"."POST_ID" AS "POST_ID", 
+"VOTEDOWN_VIEW"."DETAILS" AS "DETAILS", 
+"VOTEDOWN_VIEW"."Total_Down_Votes" AS "Total_Down_Votes"
+FROM "ADMIN"."VOTEDOWN_VIEW" "VOTEDOWN_VIEW"</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VOTEUP_VIEW" EntityType="Self.VOTEUP_VIEW" store:Type="Views" store:Schema="ADMIN">
+      <DefiningQuery>SELECT 
+"VOTEUP_VIEW"."USERNAME_VOTER" AS "USERNAME_VOTER", 
+"VOTEUP_VIEW"."POST_ID" AS "POST_ID", 
+"VOTEUP_VIEW"."DETAILS" AS "DETAILS", 
+"VOTEUP_VIEW"."Total_Up_Votes" AS "Total_Up_Votes"
+FROM "ADMIN"."VOTEUP_VIEW" "VOTEUP_VIEW"</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ALER_ACTIVITY_ID" Association="Self.FK_ALER_ACTIVITY_ID">
+      <End Role="ALERT" EntitySet="ALERT" />
+      <End Role="ACTIVITY" EntitySet="ACTIVITY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ALERT_ID" Association="Self.FK_ALERT_ID">
+      <End Role="ALERT" EntitySet="ALERT" />
+      <End Role="VOTE" EntitySet="VOTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ALERT_REPORT_ID" Association="Self.FK_ALERT_REPORT_ID">
+      <End Role="ALERT" EntitySet="ALERT" />
+      <End Role="REPORT" EntitySet="REPORT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ALERTED_USERNAME" Association="Self.FK_ALERTED_USERNAME">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="ALERT" EntitySet="ALERT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_COLLEGE_NAME" Association="Self.FK_COLLEGE_NAME">
+      <End Role="COLLEGE" EntitySet="COLLEGE" />
+      <End Role="POST" EntitySet="POST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FOLLOWER_UN" Association="Self.FK_FOLLOWER_UN">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="FOLLOWING" EntitySet="FOLLOWING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FOLLOWING_UN" Association="Self.FK_FOLLOWING_UN">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="FOLLOWING" EntitySet="FOLLOWING" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_COLLEGE" Association="Self.FK_MEMBER_COLLEGE">
+      <End Role="COLLEGE" EntitySet="COLLEGE" />
+      <End Role="MEMBER" EntitySet="MEMBER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_POST_ID" Association="Self.FK_POST_ID">
+      <End Role="POST" EntitySet="POST" />
+      <End Role="ALERT" EntitySet="ALERT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USERNAME_ACTIVITY" Association="Self.FK_USERNAME_ACTIVITY">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="ACTIVITY" EntitySet="ACTIVITY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USERNAME_OP" Association="Self.FK_USERNAME_OP">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="POST" EntitySet="POST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USERNAME_POSTER" Association="Self.FK_USERNAME_POSTER">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="VOTE" EntitySet="VOTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USERNAME_REPORT" Association="Self.FK_USERNAME_REPORT">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="REPORT" EntitySet="REPORT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USERNAME_VOTER" Association="Self.FK_USERNAME_VOTER">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="VOTE" EntitySet="VOTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VOTED_POST_ID" Association="Self.FK_VOTED_POST_ID">
+      <End Role="POST" EntitySet="POST" />
+      <End Role="VOTE" EntitySet="VOTE" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
