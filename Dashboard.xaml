@@ -14,7 +14,7 @@
         <Button x:Name="btn_Login" Content="Submit" HorizontalAlignment="Left" Margin="96.333,186,0,0" VerticalAlignment="Top" Width="83" Height="42" Grid.Column="1" FontSize="22" BorderBrush="#FFF3EAEA" Background="#FF4CAF50" Foreground="#FFF3EFEF" />
         <Rectangle Fill="#FF607D8B" HorizontalAlignment="Left" Height="56" Stroke="Black" VerticalAlignment="Top" Width="447" Grid.ColumnSpan="2" Margin="0,0,-0.333,0"/>
 
-        <Label x:Name="CollegeYak" Content="CollegeYak" HorizontalAlignment="Left" Margin="137,0,0,0" VerticalAlignment="Top" Height="56" Width="185" FontSize="36" FontFamily="Microsoft JhengHei UI Light" Foreground="#FFF9F4F4" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblHeader" Content="Welcome " HorizontalAlignment="Left" Margin="71,0,0,0" VerticalAlignment="Top" Height="56" Width="321" FontSize="30" FontFamily="Microsoft JhengHei UI Light" Foreground="#FFF9F4F4" Grid.ColumnSpan="2"/>
         <TextBox x:Name="textBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="102" Margin="21,79,0,0" TextWrapping="Wrap" Text="Your Yak...... " VerticalAlignment="Top" Width="391" FontSize="20" GotFocus="TextBox_GotFocus" Foreground="#FF607D8B" />
         <ListBox x:Name="listBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="403" Margin="21,295,0,0" VerticalAlignment="Top" Width="390"/>
 

@@ -46,7 +46,7 @@ namespace CollegeYak
                 MessageBox.Show("Success! You're signed up");
 
 
-                Dashboard dash = new Dashboard();
+                Dashboard dash = new Dashboard(username);
                 dash.Show();
                 this.Hide();
             }

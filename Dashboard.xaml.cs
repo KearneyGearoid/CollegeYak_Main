@@ -20,12 +20,15 @@ namespace CollegeYak
     public partial class Dashboard : Window
     {
         ListBox posts = new ListBox();
+        String username;
 
-        public Dashboard()
+        public Dashboard(String username)
         {
             InitializeComponent();
             LoadPosts();
             listBox.Items.Add("Gearoid");
+            this.username = username;
+            lblHeader.Content = "Welcome " + username;
         }
 
         public void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -108,7 +111,8 @@ namespace CollegeYak
         {
 
             Button buttonThatWasClicked = (Button)sender;
-            MessageBox.Show("Up Vote Button pressed " + id);
+            MessageBox.Show("Up Vote Button pressed " + id + "\n" +  this.username
+                );
 
         }
 
@@ -116,7 +120,7 @@ namespace CollegeYak
         {
 
             Button buttonThatWasClicked = (Button)sender;
-            MessageBox.Show("Down Vote Button pressed. The post id is  " +  id);
+            MessageBox.Show("Down Vote Button pressed. The post id is  " + id + "\n" + this.username);
 
         }
 
