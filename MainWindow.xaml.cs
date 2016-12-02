@@ -40,9 +40,7 @@ namespace CollegeYak
 
                 var login = context.LOGGINGIN(username, password);
 
-                MessageBox.Show("Success! You're logged in");
-
-
+      
                 Dashboard dash = new Dashboard();
                 dash.Show();
                 this.Hide();
