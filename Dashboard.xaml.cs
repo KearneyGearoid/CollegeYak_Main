@@ -48,11 +48,11 @@ namespace CollegeYak
 
                 foreach(var item in query)
                 {
-                    Decimal votedPostId;
+                    int votedPostId;
                     int downvote = 0;
                     int upvote = 0;
 
-                    votedPostId = item.POST_ID;
+                    votedPostId = Convert.ToInt32(item.POST_ID);
 
                     var queryVoteDownCount = from a in context.VOTEDOWN_VIEW
                                              where a.POST_ID == votedPostId
@@ -78,7 +78,7 @@ namespace CollegeYak
                      Button btnUpVote = new Button();
                     btnUpVote.Content = "Up Votes";
                     //btnUpVote.Click += new RoutedEventHandler(btnUpVote_Click);
-                    btnUpVote.Click += (sender, EventArgs) => { btnUpVote_Click(sender, EventArgs, item.POST_ID); };
+                    btnUpVote.Click += (sender, EventArgs) => { btnUpVote_Click(sender, EventArgs, this.username, item.Username, "U", votedPostId); };
 
 
                     Label lblUpvote = new Label();
@@ -88,6 +88,7 @@ namespace CollegeYak
                     btnDownVote.Content = "Down Votes";
                     //btnDownVote.Click += new RoutedEventHandler(btnDownVote_Click);
 
+                    //Learned this here http://stackoverflow.com/a/36948090
                     btnDownVote.Click += (sender, EventArgs) => { btnDownVote_Click(sender, EventArgs, item.POST_ID); };
 
 
@@ -107,13 +108,15 @@ namespace CollegeYak
 
         }
 
-        void btnUpVote_Click(object sender, RoutedEventArgs e, Decimal id)
+        void btnUpVote_Click(object sender, RoutedEventArgs e, String voter,String voted,String type, int id)
         {
 
             Button buttonThatWasClicked = (Button)sender;
-            MessageBox.Show("Up Vote Button pressed " + id + "\n" +  this.username
-                );
-
+            MessageBox.Show("Up Vote Button pressed "  + "\n" + voter + "\n" + voted + "\n" + type + "\n" + id);
+            using (Entities context = new Entities())
+            {
+                var login = context.CHECKVOTE(type, voter, voted, id);
+            }
         }
 
         void btnDownVote_Click(object sender, RoutedEventArgs e, Decimal id)
