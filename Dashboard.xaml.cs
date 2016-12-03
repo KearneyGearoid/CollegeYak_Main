@@ -79,7 +79,7 @@ namespace CollegeYak
                     btnUpVote.Content = "Up Votes   " + upvote;
                     btnUpVote.Background = new SolidColorBrush(Color.FromRgb(76, 175, 80));
                     btnUpVote.Foreground = Brushes.White;
-                    btnUpVote.FontSize = 30;
+                    btnUpVote.FontSize = 17;
                     //btnUpVote.Click += new RoutedEventHandler(btnUpVote_Click);
                     btnUpVote.Click += (sender, EventArgs) => { btnUpVote_Click(sender, EventArgs, this.username, item.Username, "U", votedPostId); };
 
@@ -91,7 +91,7 @@ namespace CollegeYak
                     btnDownVote.Content = "Down Votes " + downvote;
                     btnDownVote.Background = new SolidColorBrush(Color.FromRgb(244, 67, 54));
                     btnDownVote.Foreground = Brushes.White;
-                    btnDownVote.FontSize = 30;
+                    btnDownVote.FontSize = 17;
                     //btnDownVote.Click += new RoutedEventHandler(btnDownVote_Click);
 
                     //Learned this here http://stackoverflow.com/a/36948090
@@ -99,11 +99,13 @@ namespace CollegeYak
 
 
 
-                    Label lblDownvote = new Label();
-                    lblDownvote.Content = downvote;
+                    Label lblPost = new Label();
+                    lblPost.Content = q;
+                    lblPost.FontSize = 20;
 
 
-                    listBox.Items.Add(q);
+
+                    listBox.Items.Add(lblPost);
                     listBox.Items.Add(btnUpVote);
                    // listBox.Items.Add(lblUpvote);
                     listBox.Items.Add(btnDownVote);
