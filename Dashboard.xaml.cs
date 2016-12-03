@@ -76,7 +76,10 @@ namespace CollegeYak
                     var q = item.Username + "\n" + item.POST_TIME + "\n" + item.DETAILS;
 
                      Button btnUpVote = new Button();
-                    btnUpVote.Content = "Up Votes";
+                    btnUpVote.Content = "Up Votes   " + upvote;
+                    btnUpVote.Background = new SolidColorBrush(Color.FromRgb(76, 175, 80));
+                    btnUpVote.Foreground = Brushes.White;
+                    btnUpVote.FontSize = 30;
                     //btnUpVote.Click += new RoutedEventHandler(btnUpVote_Click);
                     btnUpVote.Click += (sender, EventArgs) => { btnUpVote_Click(sender, EventArgs, this.username, item.Username, "U", votedPostId); };
 
@@ -85,7 +88,10 @@ namespace CollegeYak
                     lblUpvote.Content = upvote;
 
                     Button btnDownVote = new Button();
-                    btnDownVote.Content = "Down Votes";
+                    btnDownVote.Content = "Down Votes " + downvote;
+                    btnDownVote.Background = new SolidColorBrush(Color.FromRgb(244, 67, 54));
+                    btnDownVote.Foreground = Brushes.White;
+                    btnDownVote.FontSize = 30;
                     //btnDownVote.Click += new RoutedEventHandler(btnDownVote_Click);
 
                     //Learned this here http://stackoverflow.com/a/36948090
@@ -99,9 +105,9 @@ namespace CollegeYak
 
                     listBox.Items.Add(q);
                     listBox.Items.Add(btnUpVote);
-                    listBox.Items.Add(lblUpvote);
+                   // listBox.Items.Add(lblUpvote);
                     listBox.Items.Add(btnDownVote);
-                    listBox.Items.Add(lblDownvote);
+                   // listBox.Items.Add(lblDownvote);
 
                 }
             }
