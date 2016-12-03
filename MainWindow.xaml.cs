@@ -40,6 +40,7 @@ namespace CollegeYak
 
                 var login = context.LOGGINGIN(username, password);
 
+                
       
                 Dashboard dash = new Dashboard(username);
                 dash.Show();

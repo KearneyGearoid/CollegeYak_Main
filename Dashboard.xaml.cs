@@ -48,7 +48,7 @@ namespace CollegeYak
                             orderby c.Username
                             select c;
 
-                foreach(var item in query)
+                foreach (var item in query)
                 {
                     int votedPostId;
                     int downvote = 0;
@@ -66,9 +66,9 @@ namespace CollegeYak
                     }
 
                     var queryVoteUpCount = from a in context.VOTEUP_VIEW
-                                             where a.POST_ID == votedPostId
-                                             orderby a.POST_ID
-                                             select a;
+                                           where a.POST_ID == votedPostId
+                                           orderby a.POST_ID
+                                           select a;
 
                     foreach (var voteUpItem in queryVoteUpCount)
                     {
@@ -77,7 +77,7 @@ namespace CollegeYak
 
                     var q = item.Username + "\n" + item.POST_TIME + "\n" + item.DETAILS;
 
-                     Button btnUpVote = new Button();
+                    Button btnUpVote = new Button();
                     btnUpVote.Content = "Up Votes   " + upvote;
                     btnUpVote.Background = new SolidColorBrush(Color.FromRgb(76, 175, 80));
                     btnUpVote.Foreground = Brushes.White;
@@ -109,20 +109,20 @@ namespace CollegeYak
 
                     listBox.Items.Add(lblPost);
                     listBox.Items.Add(btnUpVote);
-                   // listBox.Items.Add(lblUpvote);
+                    // listBox.Items.Add(lblUpvote);
                     listBox.Items.Add(btnDownVote);
-                   // listBox.Items.Add(lblDownvote);
+                    // listBox.Items.Add(lblDownvote);
 
                 }
             }
 
         }
 
-        void btnUpVote_Click(object sender, RoutedEventArgs e, String voter,String voted,String type, int id)
+        void btnUpVote_Click(object sender, RoutedEventArgs e, String voter, String voted, String type, int id)
         {
 
             Button buttonThatWasClicked = (Button)sender;
-            MessageBox.Show("Up Vote Button pressed "  + "\n" + voter + "\n" + voted + "\n" + type + "\n" + id);
+            MessageBox.Show("Up Vote Button pressed " + "\n" + voter + "\n" + voted + "\n" + type + "\n" + id);
             using (Entities context = new Entities())
             {
                 var login = context.CHECKVOTE(type, voter, voted, id);
@@ -139,23 +139,40 @@ namespace CollegeYak
 
         private void btn_Post_Click(object sender, RoutedEventArgs e)
         {
+            var membercollege = "";
 
-            using (Entities context = new Entities())
+
+
+            using (Entities posts = new Entities())
             {
-                try
-                {
-                    POST newPost = new POST() { POST_ID = 20, COLLEGE_NAME = "university college cork", USERNAME_OP = "Csaba123", DETAILS = "Gearoids Test", POST_TIME = DateTime.Now, VISIBILITY = "Y" };
+                var query = from p in posts.MEMBERs
+                            where p.USERNAME == username
+                            select p;
 
-                    context.POSTs.Add(newPost);
-                    context.SaveChanges();
-                }
-                catch(Exception ex)
+                foreach (var user in query)
                 {
-                    MessageBox.Show(ex.InnerException + "");
+                    MessageBox.Show(membercollege = user.COLLEGE_NAME);
                 }
+
+
+
+                // var details = txtPost.Text;
+
+                /*    var login = posts.INSERTPOST(membercollege, username, details);
+                    try
+                    {
+                       
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.InnerException + "");
+                    }
+                }*/
+
+
+
             }
-            
-
         }
     }
 }
+
