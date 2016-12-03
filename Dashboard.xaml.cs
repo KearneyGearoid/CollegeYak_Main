@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace CollegeYak
 {
     /// <summary>
@@ -138,12 +139,20 @@ namespace CollegeYak
 
         private void btn_Post_Click(object sender, RoutedEventArgs e)
         {
-            using (var context = new Entities())
-            {
-                var newPost = new POST() { POST_ID = 20, COLLEGE_NAME = "university college cork", USERNAME_OP = "Csaba123", DETAILS = "Gearoids Test" };
 
-                context.POSTs.Add(newPost);
-                context.SaveChanges();
+            using (Entities context = new Entities())
+            {
+                try
+                {
+                    POST newPost = new POST() { POST_ID = 20, COLLEGE_NAME = "university college cork", USERNAME_OP = "Csaba123", DETAILS = "Gearoids Test", POST_TIME = DateTime.Now, VISIBILITY = "Y" };
+
+                    context.POSTs.Add(newPost);
+                    context.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.InnerException + "");
+                }
             }
             
 

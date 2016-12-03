@@ -41,14 +41,19 @@ namespace CollegeYak
                 Decimal age = Convert.ToDecimal(txtAge.Text);
                 string email = txtEmail.Text;
 
-                var signup = context.SIGNIN(username, email,college,password,age);
+           
 
-                MessageBox.Show("Success! You're signed up");
+                    var signup = context.SIGNIN(username, email, college, password, age);
+
+                    MessageBox.Show("Success! You're signed up");
 
 
-                Dashboard dash = new Dashboard(username);
-                dash.Show();
-                this.Hide();
+                    Dashboard dash = new Dashboard(username);
+                    dash.Show();
+                    this.Hide();
+                
+
+       
             }
         }
     }
