@@ -99,7 +99,7 @@ namespace CollegeYak
                     //btnDownVote.Click += new RoutedEventHandler(btnDownVote_Click);
 
                     //Learned this here http://stackoverflow.com/a/36948090
-                    btnDownVote.Click += (sender, EventArgs) => { btnDownVote_Click(sender, EventArgs, this.username, item.Username, "U", votedPostId); };
+                    btnDownVote.Click += (sender, EventArgs) => { btnDownVote_Click(sender, EventArgs, this.username, item.Username, "D", votedPostId); };
 
 
 
