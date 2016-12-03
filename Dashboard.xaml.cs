@@ -28,9 +28,8 @@ namespace CollegeYak
         {
             InitializeComponent();
             LoadPosts();
-            listBox.Items.Add("Gearoid");
             this.username = username;
-            lblHeader.Content = "Welcome " + username;
+            lblHeader.Content = "" + username;
         }
 
         public void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -200,7 +199,14 @@ namespace CollegeYak
 
 
             }
+
+        private void btn_Logout_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow logout = new MainWindow();
+            logout.Show();
+            this.Hide();
         }
+    }
     }
 
 

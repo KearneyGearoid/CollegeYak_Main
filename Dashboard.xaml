@@ -8,15 +8,16 @@
         Title="Dashboard" Height="719.388" Width="447.116">
     <Grid Background="#FFF0F0F0" Margin="0,0,-6.333,-19.667">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="177*"/>
-            <ColumnDefinition Width="163*"/>
+            <ColumnDefinition Width="222*"/>
+            <ColumnDefinition Width="223*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btn_Post" Content="Submit" HorizontalAlignment="Left" Margin="96.333,186,0,0" VerticalAlignment="Top" Width="83" Height="42" Grid.Column="1" FontSize="22" BorderBrush="#FFF3EAEA" Background="#FF4CAF50" Foreground="#FFF3EFEF" Click="btn_Post_Click" />
-        <Rectangle Fill="#FF607D8B" HorizontalAlignment="Left" Height="56" Stroke="Black" VerticalAlignment="Top" Width="447" Grid.ColumnSpan="2" Margin="0,0,-0.333,0"/>
+        <Button x:Name="btn_Post" Content="Submit" HorizontalAlignment="Left" Margin="96,186,0,0" VerticalAlignment="Top" Width="83" Height="42" Grid.Column="1" FontSize="22" BorderBrush="#FFF3EAEA" Background="#FF4CAF50" Foreground="#FFF3EFEF" Click="btn_Post_Click" />
+        <Rectangle Fill="#FF607D8B" HorizontalAlignment="Left" Height="56" Stroke="Black" VerticalAlignment="Top" Width="447" Grid.ColumnSpan="2" Margin="0,0,-2,0"/>
 
-        <Label x:Name="lblHeader" Content="Welcome " HorizontalAlignment="Left" Margin="71,0,0,0" VerticalAlignment="Top" Height="56" Width="321" FontSize="30" FontFamily="Microsoft JhengHei UI Light" Foreground="#FFF9F4F4" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblHeader" Content="" HorizontalAlignment="Left" Margin="123,0,0,0" VerticalAlignment="Top" Height="56" Width="199" FontSize="30" FontFamily="Microsoft JhengHei UI Light" Foreground="#FFF9F4F4" Grid.ColumnSpan="2"/>
         <TextBox x:Name="txtPost" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="102" Margin="21,79,0,0" TextWrapping="Wrap" Text="Your Yak...... " VerticalAlignment="Top" Width="391" FontSize="20" GotFocus="TextBox_GotFocus" Foreground="#FF607D8B" />
         <ListBox x:Name="listBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="403" Margin="22,243,0,0" VerticalAlignment="Top" Width="390"/>
+        <Button x:Name="btn_Logout" Content="Logout" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="22" BorderBrush="#FFF3EAEA" Background="#FF4CAF50" Foreground="#FFF3EFEF" Click="btn_Logout_Click" />
 
     </Grid>
 </Window>
