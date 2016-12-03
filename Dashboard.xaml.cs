@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.EntityClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -137,6 +138,14 @@ namespace CollegeYak
 
         private void btn_Post_Click(object sender, RoutedEventArgs e)
         {
+            using (var context = new Entities())
+            {
+                var newPost = new POST() { POST_ID = 20, COLLEGE_NAME = "university college cork", USERNAME_OP = "Csaba123", DETAILS = "Gearoids Test" };
+
+                context.POSTs.Add(newPost);
+                context.SaveChanges();
+            }
+            
 
         }
     }
