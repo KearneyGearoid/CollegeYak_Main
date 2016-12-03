@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.1" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACTIVITY">
           <Key>
             <PropertyRef Name="ACTIVITY_ID" />
@@ -300,6 +300,11 @@ warning 6002: The table/view 'ADMIN.VOTEUP_VIEW' does not have a primary key def
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="ADDPOSTG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+          <Parameter Name="COLLEGE" Type="varchar2" Mode="In" />
+          <Parameter Name="USERNAME" Type="varchar2" Mode="In" />
+          <Parameter Name="DETAILS" Type="varchar2" Mode="In" />
+        </Function>
         <Function Name="CHECKVOTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
           <Parameter Name="VOTETYPE" Type="varchar2" Mode="In" />
           <Parameter Name="VOTER_USERNAME" Type="varchar2" Mode="In" />
@@ -315,6 +320,11 @@ warning 6002: The table/view 'ADMIN.VOTEUP_VIEW' does not have a primary key def
         <Function Name="CREATEPOST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
           <Parameter Name="DETAILS" Type="varchar2" Mode="In" />
           <Parameter Name="ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="INSERTPOST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+          <Parameter Name="COLLEGE" Type="varchar2" Mode="In" />
+          <Parameter Name="USERNAME" Type="varchar2" Mode="In" />
+          <Parameter Name="DETAILS" Type="varchar2" Mode="In" />
         </Function>
         <Function Name="IS_UNAME_PSW_MATCH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN" ReturnType="pl/sql boolean">
           <Parameter Name="UNAME" Type="varchar2" Mode="In" />
@@ -428,8 +438,7 @@ FROM "ADMIN"."VOTEUP_VIEW" "VOTEUP_VIEW"</DefiningQuery>
             <End Role="VOTE" EntitySet="VOTE" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -807,7 +816,7 @@ FROM "ADMIN"."VOTEUP_VIEW" "VOTEUP_VIEW"</DefiningQuery>
             <Parameter Name="ID" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="LIST_VOTERS_FOR_POST">
-            <Parameter Name="V_POST_ID" Mode="In" Type="Decimal" />
+          <Parameter Name="V_POST_ID" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="LOGGINGIN">
             <Parameter Name="UNAME" Mode="In" Type="String" />
@@ -819,6 +828,16 @@ FROM "ADMIN"."VOTEUP_VIEW" "VOTEUP_VIEW"</DefiningQuery>
             <Parameter Name="COLLEGE" Mode="In" Type="String" />
             <Parameter Name="PASSWORD" Mode="In" Type="String" />
             <Parameter Name="AGE" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="ADDPOSTG">
+            <Parameter Name="COLLEGE" Mode="In" Type="String" />
+            <Parameter Name="USERNAME" Mode="In" Type="String" />
+            <Parameter Name="DETAILS" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="INSERTPOST">
+            <Parameter Name="COLLEGE" Mode="In" Type="String" />
+            <Parameter Name="USERNAME" Mode="In" Type="String" />
+            <Parameter Name="DETAILS" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
       </Schema>
@@ -947,6 +966,8 @@ FROM "ADMIN"."VOTEUP_VIEW" "VOTEUP_VIEW"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="LIST_VOTERS_FOR_POST" FunctionName="Model.Store.LIST_VOTERS_FOR_POST" />
           <FunctionImportMapping FunctionImportName="LOGGINGIN" FunctionName="Model.Store.LOGGINGIN" />
           <FunctionImportMapping FunctionImportName="SIGNIN" FunctionName="Model.Store.SIGNIN" />
+          <FunctionImportMapping FunctionImportName="ADDPOSTG" FunctionName="Model.Store.ADDPOSTG" />
+          <FunctionImportMapping FunctionImportName="INSERTPOST" FunctionName="Model.Store.INSERTPOST" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

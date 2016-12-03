@@ -48,6 +48,8 @@ namespace CollegeYak
                             orderby c.Username
                             select c;
 
+              
+
                 foreach (var item in query)
                 {
                     int votedPostId;
@@ -139,26 +141,27 @@ namespace CollegeYak
 
         private void btn_Post_Click(object sender, RoutedEventArgs e)
         {
-            var membercollege = "";
-
-
 
             using (Entities posts = new Entities())
             {
                 var query = from p in posts.MEMBERs
                             where p.USERNAME == username
                             select p;
+                var college = "";
+                var details = txtPost.Text;
 
                 foreach (var user in query)
                 {
-                    MessageBox.Show(membercollege = user.COLLEGE_NAME);
+                   college = user.COLLEGE_NAME;
                 }
 
+                MessageBox.Show("" + college + "      " + details);
+
+             
 
 
-                // var details = txtPost.Text;
 
-                /*    var login = posts.INSERTPOST(membercollege, username, details);
+                 //var login = posts.(college, 21);
                     try
                     {
                        
@@ -167,12 +170,13 @@ namespace CollegeYak
                     {
                         MessageBox.Show(ex.InnerException + "");
                     }
-                }*/
+                }
 
 
 
             }
         }
     }
-}
+
+
 
