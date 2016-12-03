@@ -295,6 +295,11 @@ warning 6002: The table/view 'ADMIN.VOTEUP_VIEW' does not have a primary key def
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="ADDPOSTG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+    <Parameter Name="COLLEGE" Type="varchar2" Mode="In" />
+    <Parameter Name="USERNAME" Type="varchar2" Mode="In" />
+    <Parameter Name="DETAILS" Type="varchar2" Mode="In" />
+  </Function>
   <Function Name="CHECKVOTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
     <Parameter Name="VOTETYPE" Type="varchar2" Mode="In" />
     <Parameter Name="VOTER_USERNAME" Type="varchar2" Mode="In" />
@@ -310,6 +315,11 @@ warning 6002: The table/view 'ADMIN.VOTEUP_VIEW' does not have a primary key def
   <Function Name="CREATEPOST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
     <Parameter Name="DETAILS" Type="varchar2" Mode="In" />
     <Parameter Name="ID" Type="number" Mode="In" />
+  </Function>
+  <Function Name="INSERTPOST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+    <Parameter Name="COLLEGE" Type="varchar2" Mode="In" />
+    <Parameter Name="USERNAME" Type="varchar2" Mode="In" />
+    <Parameter Name="DETAILS" Type="varchar2" Mode="In" />
   </Function>
   <Function Name="IS_UNAME_PSW_MATCH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN" ReturnType="pl/sql boolean">
     <Parameter Name="UNAME" Type="varchar2" Mode="In" />

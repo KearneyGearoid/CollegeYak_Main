@@ -121,5 +121,7 @@
     <FunctionImportMapping FunctionImportName="LIST_VOTERS_FOR_POST" FunctionName="Model.Store.LIST_VOTERS_FOR_POST" />
     <FunctionImportMapping FunctionImportName="LOGGINGIN" FunctionName="Model.Store.LOGGINGIN" />
     <FunctionImportMapping FunctionImportName="SIGNIN" FunctionName="Model.Store.SIGNIN" />
+    <FunctionImportMapping FunctionImportName="ADDPOSTG" FunctionName="Model.Store.ADDPOSTG" />
+    <FunctionImportMapping FunctionImportName="INSERTPOST" FunctionName="Model.Store.INSERTPOST" />
   </EntityContainerMapping>
 </Mapping>

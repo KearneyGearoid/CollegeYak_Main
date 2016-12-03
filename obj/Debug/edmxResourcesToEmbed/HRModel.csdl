@@ -387,5 +387,15 @@
       <Parameter Name="PASSWORD" Mode="In" Type="String" />
       <Parameter Name="AGE" Mode="In" Type="Decimal" />
     </FunctionImport>
+    <FunctionImport Name="ADDPOSTG">
+      <Parameter Name="COLLEGE" Mode="In" Type="String" />
+      <Parameter Name="USERNAME" Mode="In" Type="String" />
+      <Parameter Name="DETAILS" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="INSERTPOST">
+      <Parameter Name="COLLEGE" Mode="In" Type="String" />
+      <Parameter Name="USERNAME" Mode="In" Type="String" />
+      <Parameter Name="DETAILS" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
 </Schema>

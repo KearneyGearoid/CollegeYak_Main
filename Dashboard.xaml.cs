@@ -99,7 +99,7 @@ namespace CollegeYak
                     //btnDownVote.Click += new RoutedEventHandler(btnDownVote_Click);
 
                     //Learned this here http://stackoverflow.com/a/36948090
-                    btnDownVote.Click += (sender, EventArgs) => { btnDownVote_Click(sender, EventArgs, item.POST_ID); };
+                    btnDownVote.Click += (sender, EventArgs) => { btnDownVote_Click(sender, EventArgs, this.username, item.Username, "U", votedPostId); };
 
 
 
@@ -127,15 +127,39 @@ namespace CollegeYak
             MessageBox.Show("Up Vote Button pressed " + "\n" + voter + "\n" + voted + "\n" + type + "\n" + id);
             using (Entities context = new Entities())
             {
-                var login = context.CHECKVOTE(type, voter, voted, id);
+                try
+                {
+                    var login = context.CHECKVOTE(type, voter, voted, id);
+
+                    listBox.UpdateLayout();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.InnerException + "");
+                }
             }
         }
 
-        void btnDownVote_Click(object sender, RoutedEventArgs e, Decimal id)
+        void btnDownVote_Click(object sender, RoutedEventArgs e, String voter, String voted, String type, int id)
         {
 
+        
+
             Button buttonThatWasClicked = (Button)sender;
-            MessageBox.Show("Down Vote Button pressed. The post id is  " + id + "\n" + this.username);
+            MessageBox.Show("Down Vote Button pressed " + "\n" + voter + "\n" + voted + "\n" + type + "\n" + id);
+            using (Entities context = new Entities())
+            {
+                try
+                {
+                    var login = context.CHECKVOTE(type, voter, voted, id);
+
+                    listBox.UpdateLayout();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.InnerException + "");
+                }
+            }
 
         }
 
@@ -161,11 +185,12 @@ namespace CollegeYak
 
 
 
-                 //var login = posts.(college, 21);
+                 
                     try
                     {
-                       
-                    }
+                    var login = posts.INSERTPOST(college, username, details);
+                    listBox.UpdateLayout();
+                }
                     catch (Exception ex)
                     {
                         MessageBox.Show(ex.InnerException + "");
