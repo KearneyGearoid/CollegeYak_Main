@@ -139,5 +139,39 @@ namespace CollegeYak
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SIGNIN", nAMEParameter, eMAILParameter, cOLLEGEParameter, pASSWORDParameter, aGEParameter);
         }
+    
+        public virtual int ADDPOSTG(string cOLLEGE, string uSERNAME, string dETAILS)
+        {
+            var cOLLEGEParameter = cOLLEGE != null ?
+                new ObjectParameter("COLLEGE", cOLLEGE) :
+                new ObjectParameter("COLLEGE", typeof(string));
+    
+            var uSERNAMEParameter = uSERNAME != null ?
+                new ObjectParameter("USERNAME", uSERNAME) :
+                new ObjectParameter("USERNAME", typeof(string));
+    
+            var dETAILSParameter = dETAILS != null ?
+                new ObjectParameter("DETAILS", dETAILS) :
+                new ObjectParameter("DETAILS", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ADDPOSTG", cOLLEGEParameter, uSERNAMEParameter, dETAILSParameter);
+        }
+    
+        public virtual int INSERTPOST(string cOLLEGE, string uSERNAME, string dETAILS)
+        {
+            var cOLLEGEParameter = cOLLEGE != null ?
+                new ObjectParameter("COLLEGE", cOLLEGE) :
+                new ObjectParameter("COLLEGE", typeof(string));
+    
+            var uSERNAMEParameter = uSERNAME != null ?
+                new ObjectParameter("USERNAME", uSERNAME) :
+                new ObjectParameter("USERNAME", typeof(string));
+    
+            var dETAILSParameter = dETAILS != null ?
+                new ObjectParameter("DETAILS", dETAILS) :
+                new ObjectParameter("DETAILS", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERTPOST", cOLLEGEParameter, uSERNAMEParameter, dETAILSParameter);
+        }
     }
 }
