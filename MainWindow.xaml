@@ -8,17 +8,17 @@
         Title="MainWindow" Height="719.388" Width="447.116">
     <Grid Background="#FFF0F0F0" Margin="0,0,-6.333,-19.667">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="177*"/>
-            <ColumnDefinition Width="163*"/>
+            <ColumnDefinition Width="223*"/>
+            <ColumnDefinition Width="222*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btn_Login" Content="Login" HorizontalAlignment="Left" Margin="48.333,419,0,0" VerticalAlignment="Top" Width="131" Height="53" Grid.Column="1" FontSize="22" BorderBrush="#FFF3EAEA" Background="#FF4CAF50" Foreground="#FFF3EFEF" Click="btn_Login_Click" />
-        <Rectangle Fill="#FF607D8B" HorizontalAlignment="Left" Height="56" Stroke="Black" VerticalAlignment="Top" Width="447" Grid.ColumnSpan="2" Margin="0,0,-0.333,0"/>
+        <Button x:Name="btn_Login" Content="Login" HorizontalAlignment="Left" Margin="6,419,0,0" VerticalAlignment="Top" Width="131" Height="53" Grid.Column="1" FontSize="22" BorderBrush="#FFF3EAEA" Background="#FF4CAF50" Foreground="#FFF3EFEF" Click="btn_Login_Click" />
+        <Rectangle Fill="#FF607D8B" HorizontalAlignment="Left" Height="56" Stroke="Black" VerticalAlignment="Top" Width="447" Grid.ColumnSpan="2" Margin="0,0,-2,0"/>
 
-        <Label x:Name="CollegeYak" Content="CollegeYak" HorizontalAlignment="Left" Margin="137,0,0,0" VerticalAlignment="Top" Height="56" Width="185" FontSize="36" FontFamily="Microsoft JhengHei UI Light" Foreground="#FFF9F4F4" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="txtUsername" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="54" Margin="98,214,0,0" TextWrapping="Wrap" Text="Username " VerticalAlignment="Top" Width="274" FontSize="36" GotFocus="TextBox_GotFocus" Foreground="#FF607D8B"/>
-        <TextBox x:Name="txtPassword" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="54" Margin="98,301,0,0" TextWrapping="Wrap" Text="Password " VerticalAlignment="Top" Width="274" FontSize="36" GotFocus="TextBox_GotFocus" Foreground="#FF607D8B"/>
-        <Button x:Name="btn_Signup" Content="Signup" HorizontalAlignment="Left" Margin="57,419,0,0" VerticalAlignment="Top" Width="131" Height="53" FontSize="22" BorderBrush="#FFF3EAEA" Background="#FF3F51B5"  Foreground="#FFF3EFEF" Click="btn_Signup_Click"  />
-      
-        
+        <Label x:Name="CollegeYak" Content="CollegeYak" HorizontalAlignment="Left" Margin="131,0,0,0" VerticalAlignment="Top" Height="56" Width="185" FontSize="36" FontFamily="Microsoft JhengHei UI Light" Foreground="#FFF9F4F4" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtUsername" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="54" Margin="86,214,0,0" TextWrapping="Wrap" Text="Username " VerticalAlignment="Top" Width="274" FontSize="36" GotFocus="TextBox_GotFocus" Foreground="#FF607D8B"/>
+        <TextBox x:Name="txtPassword" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="54" Margin="86,301,0,0" TextWrapping="Wrap" Text="Password " VerticalAlignment="Top" Width="274" FontSize="36" GotFocus="TextBox_GotFocus" Foreground="#FF607D8B"/>
+        <Button x:Name="btn_Signup" Content="Signup" HorizontalAlignment="Left" Margin="86,419,0,0" VerticalAlignment="Top" Width="131" Height="53" FontSize="22" BorderBrush="#FFF3EAEA" Background="#FF3F51B5"  Foreground="#FFF3EFEF" Click="btn_Signup_Click"  />
+
+
     </Grid>
 </Window>
