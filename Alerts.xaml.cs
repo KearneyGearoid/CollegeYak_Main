@@ -24,8 +24,9 @@ namespace CollegeYak
         public Alerts(String username)
         {
             InitializeComponent();
-            LoadAlerts();
             this.username = username;
+            LoadAlerts();
+            
         }
 
 
@@ -34,6 +35,7 @@ namespace CollegeYak
             using (var context = new Entities())
             {
                 var query = from c in context.VOTEs
+                            where c.USERNAME_POSTER == username
                             select c;
 
                 var q = "";
@@ -42,27 +44,18 @@ namespace CollegeYak
                 {
 
 
-                     q = item.USERNAME_POSTER + "\n" + item.POST_ID + "\n" + item.USERNAME_VOTER;
-
-
-                    
-
-
+                     q = item.USERNAME_VOTER + " on post " + item.POST_ID;
 
                     Label lblAlert = new Label();
                     lblAlert.Content = q;
                     lblAlert.FontSize = 20;
-
-
-
 
                     listBox.Items.Add(lblAlert);
 
 
 
                 }
-                MessageBox.Show("The alert is " + q);
-
+              
             }
 
         }
@@ -72,6 +65,7 @@ namespace CollegeYak
             Dashboard back = new Dashboard(username);
             back.Show();
             this.Hide();
+
         }
     }
 }

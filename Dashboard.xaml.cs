@@ -24,12 +24,13 @@ namespace CollegeYak
         ListBox posts = new ListBox();
         String username;
 
-        public Dashboard(String username)
+        public Dashboard(String usernameMember)
         {
             InitializeComponent();
             LoadPosts();
-            this.username = username;
+            this.username = usernameMember;
             lblHeader.Content = "" + username;
+  
         }
 
         public void TextBox_GotFocus(object sender, RoutedEventArgs e)
@@ -117,6 +118,7 @@ namespace CollegeYak
 
                 }
             }
+         
 
         }
 
@@ -211,8 +213,9 @@ namespace CollegeYak
         private void btn_Alert_Click(object sender, RoutedEventArgs e)
         {
             Alerts alertWindow = new Alerts(username);
-            alertWindow.Show();
             this.Hide();
+            alertWindow.Show();
+            
         }
     }
     }
