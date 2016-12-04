@@ -33,44 +33,20 @@ namespace CollegeYak
         {
             using (var context = new Entities())
             {
-                var query = from c in context.ALERTs
-                            orderby c.Username
+                var query = from c in context.VOTEs
                             select c;
 
-
+                var q = "";
 
                 foreach (var item in query)
                 {
-                    int votedPostId;
-                    int downvote = 0;
-                    int upvote = 0;
 
-                    votedPostId = Convert.ToInt32(item.POST_ID);
 
-                    var queryVoteDownCount = from a in context.VOTEDOWN_VIEW
-                                             where a.POST_ID == votedPostId
-                                             orderby a.POST_ID
-                                             select a;
-                    foreach (var voteDownItem in queryVoteDownCount)
-                    {
-                        downvote++;
-                    }
+                     q = item.USERNAME_POSTER + "\n" + item.POST_ID + "\n" + item.USERNAME_VOTER;
 
-                    var queryVoteUpCount = from a in context.VOTEUP_VIEW
-                                           where a.POST_ID == votedPostId
-                                           orderby a.POST_ID
-                                           select a;
 
-                    foreach (var voteUpItem in queryVoteUpCount)
-                    {
-                        upvote++;
-                    }
+                    
 
-                    var q = item.Username + "\n" + item.POST_TIME + "\n" + item.DETAILS;
-
-                 
-
-       
 
 
                     Label lblAlert = new Label();
@@ -85,13 +61,17 @@ namespace CollegeYak
 
 
                 }
+                MessageBox.Show("The alert is " + q);
+
             }
 
         }
 
         private void btn_Back_Click(object sender, RoutedEventArgs e)
         {
-
+            Dashboard back = new Dashboard(username);
+            back.Show();
+            this.Hide();
         }
     }
 }

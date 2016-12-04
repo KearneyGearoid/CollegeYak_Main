@@ -20,7 +20,7 @@
 
         </ListBox>
         <Button x:Name="btn_Logout" Content="Logout" HorizontalAlignment="Left" Margin="10,6,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="22" BorderBrush="#FFF3EAEA" Background="#FF4CAF50" Foreground="#FFF3EFEF" Click="btn_Logout_Click" />
-        <Button x:Name="btn_Alerts" Content="" HorizontalAlignment="Left" Margin="129,6,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="22" BorderBrush="#FFF3EAEA" Background="#E91E63" Foreground="#FFF3EFEF" Click="btn_Alert_Click" Grid.Column="1" />
+        <Button x:Name="btn_Alerts" Content="Alerts" HorizontalAlignment="Left" Margin="129,6,0,0" VerticalAlignment="Top" Width="83" Height="42" FontSize="22" BorderBrush="#FFF3EAEA" Background="#E91E63" Foreground="#FFF3EFEF" Click="btn_Alert_Click" Grid.Column="1" />
 
     </Grid>
 </Window>
