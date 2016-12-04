@@ -81,6 +81,9 @@
     <Compile Include="ALERT.cs">
       <DependentUpon>HRModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Alerts.xaml.cs">
+      <DependentUpon>Alerts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="COLLEGE.cs">
       <DependentUpon>HRModel.tt</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
     <Compile Include="VOTEUP_VIEW.cs">
       <DependentUpon>HRModel.tt</DependentUpon>
     </Compile>
+    <Page Include="Alerts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dashboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

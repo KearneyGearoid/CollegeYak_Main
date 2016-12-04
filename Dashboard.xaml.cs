@@ -105,8 +105,9 @@ namespace CollegeYak
                     Label lblPost = new Label();
                     lblPost.Content = q;
                     lblPost.FontSize = 20;
+                 
 
-
+                   
 
                     listBox.Items.Add(lblPost);
                     listBox.Items.Add(btnUpVote);
@@ -204,6 +205,13 @@ namespace CollegeYak
         {
             MainWindow logout = new MainWindow();
             logout.Show();
+            this.Hide();
+        }
+
+        private void btn_Alert_Click(object sender, RoutedEventArgs e)
+        {
+            Alerts alertWindow = new Alerts(username);
+            alertWindow.Show();
             this.Hide();
         }
     }
