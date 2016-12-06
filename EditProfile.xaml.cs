@@ -63,6 +63,23 @@ namespace CollegeYak
         private void btn_Confirm_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Username " + txtUsername.Text + "\nPassword " + txtPassword.Text + "\nEmail + " + txtEmail.Text + "\nCollege " + txtCollege.Text + "\nAge " + txtAge.Text);
+
+            using (Entities edit = new Entities())
+            {
+
+                try
+                {
+                    var editProfile = edit.UPDATEMEMBER(txtUsername.Text, txtEmail.Text, txtCollege.Text, txtPassword.Text, Convert.ToDecimal(txtAge.Text));
+                    Dashboard backMain = new Dashboard(username);
+                    backMain.Show();
+                    this.Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show( "Your Profile was not changed");
+                }
+            }
+
         }
     }
 }

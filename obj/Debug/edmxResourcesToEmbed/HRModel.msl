@@ -123,5 +123,7 @@
     <FunctionImportMapping FunctionImportName="SIGNIN" FunctionName="Model.Store.SIGNIN" />
     <FunctionImportMapping FunctionImportName="ADDPOSTG" FunctionName="Model.Store.ADDPOSTG" />
     <FunctionImportMapping FunctionImportName="INSERTPOST" FunctionName="Model.Store.INSERTPOST" />
+    <FunctionImportMapping FunctionImportName="UPDATEMEMBER" FunctionName="Model.Store.UPDATEMEMBER" />
+    <FunctionImportMapping FunctionImportName="LOAD_PICTURE" FunctionName="Model.Store.LOAD_PICTURE" />
   </EntityContainerMapping>
 </Mapping>

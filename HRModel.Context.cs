@@ -173,5 +173,43 @@ namespace CollegeYak
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("INSERTPOST", cOLLEGEParameter, uSERNAMEParameter, dETAILSParameter);
         }
+    
+        public virtual int UPDATEMEMBER(string uSERNA, string n_EMAIL, string n_COLLEGE, string n_PASSWORD, Nullable<decimal> n_AGE)
+        {
+            var uSERNAParameter = uSERNA != null ?
+                new ObjectParameter("USERNA", uSERNA) :
+                new ObjectParameter("USERNA", typeof(string));
+    
+            var n_EMAILParameter = n_EMAIL != null ?
+                new ObjectParameter("N_EMAIL", n_EMAIL) :
+                new ObjectParameter("N_EMAIL", typeof(string));
+    
+            var n_COLLEGEParameter = n_COLLEGE != null ?
+                new ObjectParameter("N_COLLEGE", n_COLLEGE) :
+                new ObjectParameter("N_COLLEGE", typeof(string));
+    
+            var n_PASSWORDParameter = n_PASSWORD != null ?
+                new ObjectParameter("N_PASSWORD", n_PASSWORD) :
+                new ObjectParameter("N_PASSWORD", typeof(string));
+    
+            var n_AGEParameter = n_AGE.HasValue ?
+                new ObjectParameter("N_AGE", n_AGE) :
+                new ObjectParameter("N_AGE", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATEMEMBER", uSERNAParameter, n_EMAILParameter, n_COLLEGEParameter, n_PASSWORDParameter, n_AGEParameter);
+        }
+    
+        public virtual int LOAD_PICTURE(string mEMBER_USERNAME, string iMAGE)
+        {
+            var mEMBER_USERNAMEParameter = mEMBER_USERNAME != null ?
+                new ObjectParameter("MEMBER_USERNAME", mEMBER_USERNAME) :
+                new ObjectParameter("MEMBER_USERNAME", typeof(string));
+    
+            var iMAGEParameter = iMAGE != null ?
+                new ObjectParameter("IMAGE", iMAGE) :
+                new ObjectParameter("IMAGE", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("LOAD_PICTURE", mEMBER_USERNAMEParameter, iMAGEParameter);
+        }
     }
 }

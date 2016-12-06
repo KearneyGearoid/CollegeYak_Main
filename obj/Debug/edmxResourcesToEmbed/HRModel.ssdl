@@ -328,6 +328,10 @@ warning 6002: The table/view 'ADMIN.VOTEUP_VIEW' does not have a primary key def
   <Function Name="LIST_VOTERS_FOR_POST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
     <Parameter Name="V_POST_ID" Type="number" Mode="In" />
   </Function>
+  <Function Name="LOAD_PICTURE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+    <Parameter Name="MEMBER_USERNAME" Type="varchar2" Mode="In" />
+    <Parameter Name="IMAGE" Type="varchar2" Mode="In" />
+  </Function>
   <Function Name="LOGGINGIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
     <Parameter Name="UNAME" Type="varchar2" Mode="In" />
     <Parameter Name="PSW" Type="varchar2" Mode="In" />
@@ -338,6 +342,13 @@ warning 6002: The table/view 'ADMIN.VOTEUP_VIEW' does not have a primary key def
     <Parameter Name="COLLEGE" Type="varchar2" Mode="In" />
     <Parameter Name="PASSWORD" Type="varchar2" Mode="In" />
     <Parameter Name="AGE" Type="number" Mode="In" />
+  </Function>
+  <Function Name="UPDATEMEMBER" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ADMIN">
+    <Parameter Name="USERNA" Type="varchar2" Mode="In" />
+    <Parameter Name="N_EMAIL" Type="varchar2" Mode="In" />
+    <Parameter Name="N_COLLEGE" Type="varchar2" Mode="In" />
+    <Parameter Name="N_PASSWORD" Type="varchar2" Mode="In" />
+    <Parameter Name="N_AGE" Type="number" Mode="In" />
   </Function>
   <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="ACTIVITY" EntityType="Self.ACTIVITY" Schema="ADMIN" store:Type="Tables" />

@@ -397,5 +397,16 @@
       <Parameter Name="USERNAME" Mode="In" Type="String" />
       <Parameter Name="DETAILS" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="UPDATEMEMBER">
+      <Parameter Name="USERNA" Mode="In" Type="String" />
+      <Parameter Name="N_EMAIL" Mode="In" Type="String" />
+      <Parameter Name="N_COLLEGE" Mode="In" Type="String" />
+      <Parameter Name="N_PASSWORD" Mode="In" Type="String" />
+      <Parameter Name="N_AGE" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="LOAD_PICTURE">
+      <Parameter Name="MEMBER_USERNAME" Mode="In" Type="String" />
+      <Parameter Name="IMAGE" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
 </Schema>
