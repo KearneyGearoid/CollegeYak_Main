@@ -35,16 +35,25 @@ namespace CollegeYak
         {
             using (Entities context = new Entities())
             {
-                string username = txtUsername.Text;
+
+                try
+                {
+                    string username = txtUsername.Text;
                 string password = txtPassword.Text;
 
                 var login = context.LOGGINGIN(username, password);
 
-                
-      
+
                 Dashboard dash = new Dashboard(username);
                 dash.Show();
                 this.Hide();
+            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.InnerException + "");
+
+
+                }
             }
         }
 

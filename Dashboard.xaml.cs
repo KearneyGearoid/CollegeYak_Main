@@ -183,10 +183,6 @@ namespace CollegeYak
 
                 MessageBox.Show("" + college + "      " + details);
 
-             
-
-
-
                  
                     try
                     {
@@ -216,6 +212,13 @@ namespace CollegeYak
             this.Hide();
             alertWindow.Show();
             
+        }
+
+        private void lblHeader_Click(object sender, RoutedEventArgs e)
+        {
+            EditProfile editProfile = new EditProfile(username);
+            editProfile.Show();
+            this.Hide();
         }
     }
     }

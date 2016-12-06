@@ -59,3 +59,5 @@ C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\
 C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\bin\Debug\FontAwesome.WPF.xml
 C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\Alerts.g.cs
 C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\Alerts.baml
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\EditProfile.g.cs
+C:\Users\Gearoid\Documents\CollegeYak_IntrotoDatabaseProg-master\CollegeYak\obj\Debug\EditProfile.baml

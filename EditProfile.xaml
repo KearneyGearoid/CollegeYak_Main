@@ -1,0 +1,26 @@
+﻿<Window x:Class="CollegeYak.EditProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CollegeYak"
+        mc:Ignorable="d"
+        Title="EditProfile" Height="719.388" Width="447.116">
+    <Grid Background="#FFF0F0F0" Margin="0,0,-6.333,-19.667">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="177*"/>
+            <ColumnDefinition Width="163*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FF607D8B" HorizontalAlignment="Left" Height="56" Stroke="Black" VerticalAlignment="Top" Width="447" Grid.ColumnSpan="2" Margin="0,0,-0.333,0"/>
+
+        <Label x:Name="CollegeYak" Content="CollegeYak" HorizontalAlignment="Left" Margin="137,0,0,0" VerticalAlignment="Top" Height="56" Width="185" FontSize="36" FontFamily="Microsoft JhengHei UI Light" Foreground="#FFF9F4F4" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtUsername" Grid.ColumnSpan="2" TabIndex="1" HorizontalAlignment="Left" Height="54" Margin="98,87,0,0" TextWrapping="Wrap" Text="Username " VerticalAlignment="Top" Width="274" FontSize="36"  Foreground="#FF607D8B"/>
+        <TextBox x:Name="txtPassword" TabIndex="5" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="54" Margin="98,390,0,0" TextWrapping="Wrap" Text="Password " VerticalAlignment="Top" Width="274" FontSize="36"  Foreground="#FF607D8B"/>
+        <Button x:Name="btn_Confirm" Content="Confirm" HorizontalAlignment="Left" Margin="61,509,0,0" VerticalAlignment="Top" Width="131" Height="53" FontSize="22" BorderBrush="#FFF3EAEA" Background="#FF3F51B5"  Foreground="#FFF3EFEF" Grid.Column="1" Click="btn_Confirm_Click" />
+        <TextBox x:Name="txtEmail" TabIndex="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="54" Margin="98,146,0,0" TextWrapping="Wrap" Text="Email " VerticalAlignment="Top" Width="274" FontSize="36"  Foreground="#FF607D8B"/>
+        <TextBox x:Name="txtCollege" TabIndex="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="121" Margin="98,205,0,0" TextWrapping="Wrap" Text="College " VerticalAlignment="Top" Width="274" FontSize="36"  Foreground="#FF607D8B"/>
+        <TextBox x:Name="txtAge" TabIndex="4" Grid.ColumnSpan="2"  HorizontalAlignment="Left" Height="54" Margin="98,331,0,0" TextWrapping="Wrap" Text="Age " VerticalAlignment="Top" Width="274" FontSize="36"  Foreground="#FF607D8B"/>
+        <Button x:Name="btn_Back" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Height="38" FontSize="22" BorderBrush="#FFF3EAEA" Background="Transparent"  Foreground="#FFF3EFEF" Click="btn_Back_Click" Margin="5,10,0,0" />
+
+    </Grid>
+</Window>

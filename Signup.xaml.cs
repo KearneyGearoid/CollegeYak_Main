@@ -35,26 +35,42 @@ namespace CollegeYak
         {
             using (Entities context = new Entities())
             {
-                string username = txtUsername.Text;
+                try
+                {
+                    string username = txtUsername.Text;
                 string password = txtPassword.Text;
                 string college = txtCollege.Text;
                 Decimal age = Convert.ToDecimal(txtAge.Text);
                 string email = txtEmail.Text;
 
-           
+              
 
                     var signup = context.SIGNIN(username, email, college, password, age);
 
                     MessageBox.Show("Success! You're signed up");
 
-
                     Dashboard dash = new Dashboard(username);
                     dash.Show();
                     this.Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("You need to enter values into textboxs");
+
+
+                }
                 
 
        
             }
+        }
+
+        private void btn_Back_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow back = new MainWindow();
+            back.Show();
+            this.Hide();
+
         }
     }
 }
